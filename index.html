@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Меню | Кулинарный блог</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #FFEBAF;
+      color: #472F26;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    header {
+      background: #4C9DB0;
+      padding: 40px 20px;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(76, 157, 176, 0.3);
+    }
+
+    header h1 {
+      font-size: 2.8em;
+      color: #FFF8E7;
+      letter-spacing: 2px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    header p {
+      color: #FFF3D6;
+      font-size: 1.1em;
+      margin-top: 8px;
+      font-style: italic;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 30px 20px 60px;
+    }
+
+    .section {
+      background: #FFF8E7;
+      border-radius: 16px;
+      padding: 30px 35px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 15px rgba(71, 47, 38, 0.1);
+      border-left: 5px solid #4C9DB0;
+      transition: transform 0.2s;
+    }
+
+    .section:hover {
+      transform: translateY(-2px);
+    }
+
+    .section h2 {
+      font-size: 1.8em;
+      color: #4C9DB0;
+      margin-bottom: 18px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #E8D9B8;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section h2 .icon {
+      font-size: 1.4em;
+    }
+
+    .item {
+      padding: 12px 0;
+      border-bottom: 1px dashed #E8D9B8;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .item:last-child {
+      border-bottom: none;
+    }
+
+    .item-text {
+      flex: 1;
+      min-width: 250px;
+      font-size: 1.02em;
+    }
+
+    .item-text strong {
+      color: #472F26;
+    }
+
+    .recipe-link {
+      display: inline-block;
+      background: #4C9DB0;
+      color: #FFF;
+      text-decoration: none;
+      padding: 5px 14px;
+      border-radius: 20px;
+      font-size: 0.85em;
+      white-space: nowrap;
+      transition: background 0.2s, transform 0.15s;
+      margin-top: 4px;
+    }
+
+    .recipe-link:hover {
+      background: #3A8494;
+      transform: scale(1.05);
+    }
+
+    .recipe-link.alt {
+      background: #472F26;
+    }
+
+    .recipe-link.alt:hover {
+      background: #352520;
+    }
+
+    .sauce-box {
+      background: #FFEBAF;
+      border-radius: 12px;
+      padding: 20px 25px;
+      margin-bottom: 20px;
+      border: 1px solid #E8D9B8;
+    }
+
+    .sauce-box h3 {
+      color: #4C9DB0;
+      font-size: 1.3em;
+      margin-bottom: 10px;
+    }
+
+    .sauce-box h3.alt {
+      color: #472F26;
+    }
+
+    .sauce-box ul {
+      padding-left: 20px;
+      margin: 10px 0;
+    }
+
+    .sauce-box ul li {
+      padding: 3px 0;
+      font-size: 0.95em;
+    }
+
+    .sauce-box ol {
+      padding-left: 20px;
+      margin: 10px 0;
+    }
+
+    .sauce-box ol li {
+      padding: 3px 0;
+      font-size: 0.95em;
+    }
+
+    .sauce-box .recipe-link {
+      margin-top: 10px;
+    }
+
+    .empty-msg {
+      color: #B8A080;
+      font-style: italic;
+      text-align: center;
+      padding: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #4C9DB0;
+      font-size: 0.9em;
+      font-style: italic;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.8em;
+      }
+
+      .section {
+        padding: 20px 18px;
+      }
+
+      .section h2 {
+        font-size: 1.4em;
+      }
+
+      .item {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>🍽️ Наше Меню</h1>
+    <p>Свежие ингредиенты, любовь и вкус в каждом блюдах</p>
+    <p><b>Кушай вкусно, кушай много, становись легче</b></p>
+  </header>
+  <div class="container">
+
+    <div class="section">
+      <h2><span class="icon">🌅</span> Завтрак</h2>
+      <div class="item">
+        <div class="item-text"><strong>Сырники</strong> — Классика / С бананом / С малиновым соусом</div>
+      </div>
+      <div class="item">
+        <div class="item-text"><strong>Овсянка</strong> на воде или овсяном напитке с карамелизированной грушей, корицей
+          и грецким орехом</div>
+      </div>
+      <div class="item">
+        <div class="item-text"><strong>Оладьи из банана и овсяных хлопьев</strong> с ягодами и ложкой мёда</div>
+      </div>
+      <div class="item">
+        <div class="item-text"><strong>Смузи-боул</strong>: греческий йогурт, ассорти фруктов (по желанию), сверху
+          хрустящая гранола</div>
+      </div>
+      <div class="item">
+        <div class="item-text"><strong>Брускеты</strong> из цельнозернового хлеба с лёгким творожным сыром и
+          слабосолёным лососем</div>
+      </div>
+      <div class="item">
+        <div class="item-text"><strong>Йогурт с гранолой</strong>, свежими ягодами и корицей</div>
+      </div>
+      <div class="item">
+        <div class="item-text"><strong>Лепешка с фаршем</strong>: Лаваш, фарш (по желанию и по наличию), сыр лёгкий,
+          помидор, кетчуп</div>
+      </div>
+      <div class="item">
+        <div class="item-text"><strong>Белковый сладкий рулет</strong>: Лаваш, творог, яйцо, сахарозаменитель, фрукты и
+          ягоды</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2><span class="icon">🔥</span> Горячие блюда</h2>
+      <div class="item">
+        <div class="item-text"><strong>Курица терияки</strong> с рисом в соусе и хрустящими огурцами</div>
+      </div>
+      <div class="item">
+        <div class="item-text"><strong>Паста</strong> из цельнозерновой муки с фаршем в томатно-йогуртовом соусе</div>
+      </div>
+      <div class="item">
+        <div class="item-text"><strong>Паста с минтаем</strong> в томатном соусе</div>
+        <a href="https://www.instagram.com/reel/DcgaFHkCtTD/?utm_source=ig_web_copy_link&stkn=NTc4MTIwNjQ2YQ=="
+          class="recipe-link" target="_blank">Рецепт</a>
+      </div>
+      <div class="item">
+        <div class="item-text"><strong>Гречка с курицей</strong> в томатном соусе</div>
+      </div>
+      <div class="item">
+        <div class="item-text"><strong>Картофельное пюре</strong> с котлетками</div>
+      </div>
+      <div class="item">
+        <div class="item-text"><strong>Рис с минтаем и овощами</strong></div>
+        <a href="https://www.instagram.com/reel/DdW-d98xqc6/?utm_source=ig_web_copy_link&stkn=MzRlODBiNWFlZA=="
+          class="recipe-link" target="_blank">Рецепт</a>
+      </div>
+      <div class="item">
+        <div class="item-text"><strong>Ньокки в сливочном соусе</strong> с томлёной индейкой</div>
+        <a href="https://www.instagram.com/reel/Dc_1VDssf9X/?utm_source=ig_web_copy_link&stkn=MzRlODBiNWFlZA=="
+          class="recipe-link" target="_blank">Рецепт</a>
+      </div>
+      <div class="item">
+        <div class="item-text"><strong>Творожные вареники</strong></div>
+        <a href="https://www.instagram.com/reel/Da5SFfkhUV_/?utm_source=ig_web_copy_link&stkn=MzRlODBiNWFlZA=="
+          class="recipe-link" target="_blank">Рецепт</a>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2><span class="icon">🌮</span> Вкусное</h2>
+      <div class="item">
+        <div class="item-text"><strong>Тако</strong> с индейкой/курицей/говядиной, салат, томаты, красный лук, лёгкий
+          сыр, соус по желанию</div>
+      </div>
+      <div class="item">
+        <div class="item-text"><strong>Острый BBQ-буррито</strong> с халапеньо и фасолью</div>
+        <a href="https://www.instagram.com/reel/DdbZeOiM0p8/?utm_source=ig_web_copy_link&stkn=MzRlODBiNWFlZA=="
+          class="recipe-link" target="_blank">Рецепт</a>
+      </div>
+      <div class="item">
+        <div class="item-text"><strong>Ролл-шаурма</strong>: Лаваш, куриный фарш с красным луком, маринованный огурец,
+          лёгкий сыр, морковь по-корейски (по желанию)</div>
+      </div>
+      <div class="item">
+        <div class="item-text"><strong>Ролл с ветчиной и сыром</strong></div>
+        <a href="https://www.instagram.com/reel/DdYwnksMsmo/?utm_source=ig_web_copy_link&stkn=MzRlODBiNWFlZA=="
+          class="recipe-link" target="_blank">Рецепт</a>
+      </div>
+      <div class="item">
+        <div class="item-text"><strong>Пивчики куриные к фильму</strong></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2><span class="icon">🥗</span> Салат</h2>
+      <div class="item">
+        <div class="item-text"><strong>Цезарь</strong></div>
+      </div>
+      <div class="item">
+        <div class="item-text"><strong>Салат с фасолью</strong></div>
+      </div>
+      <div class="item">
+        <div class="item-text"><strong>Бургер салат</strong></div>
+        <a href="https://www.instagram.com/reel/DawcUpOuT_K/?utm_source=ig_web_copy_link&stkn=MzRlODBiNWFlZA=="
+          class="recipe-link" target="_blank">Рецепт</a>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2><span class="icon">☕</span> Напитки</h2>
+      <div class="item">
+        <div class="item-text"><strong>Бамбл кофе</strong></div>
+      </div>
+      <div class="item">
+        <div class="item-text"><strong>Латте / Айс Латте</strong></div>
+      </div>
+      <div class="item">
+        <div class="item-text"><strong>Капучино</strong></div>
+      </div>
+      <div class="item">
+        <div class="item-text"><strong>Американо</strong></div>
+      </div>
+      <div class="item">
+        <div class="item-text"><strong>Эспрессо тоник</strong></div>
+      </div>
+      <div class="item">
+        <div class="item-text"><strong>Взбитый эспрессо с корицей и соленным медом</strong></div>
+        <a href="https://www.instagram.com/reel/DbAszPpqbwc/?utm_source=ig_web_copy_link&stkn=MzRlODBiNWFlZA=="
+          class="recipe-link" target="_blank">Рецепт</a>
+      </div>
+      <div class="item">
+        <div class="item-text"><strong>Айс латте с арахисовой пастой</strong></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2><span class="icon">🍰</span> Десерты</h2>
+      <div class="item">
+        <div class="item-text"><strong>Тирамису</strong></div>
+        <a href="https://www.instagram.com/reel/DddfOsTI3Et/?utm_source=ig_web_copy_link&stkn=MzRlODBiNWFlZA=="
+          class="recipe-link" target="_blank">Рецепт</a>
+      </div>
+      <div class="item">
+        <div class="item-text"><strong>Булочки Синнабон</strong></div>
+        <a href="https://www.instagram.com/reel/DYCwBe6tv-t/?utm_source=ig_web_copy_link&stkn=MzRlODBiNWFlZA=="
+          class="recipe-link" target="_blank">Рецепт</a>
+      </div>
+      <div class="item">
+        <div class="item-text"><strong>Наполеон</strong></div>
+        <a href="https://www.instagram.com/reel/DclGekatvzb/?utm_source=ig_web_copy_link&stkn=MzRlODBiNWFlZA=="
+          class="recipe-link" target="_blank">Рецепт</a>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2><span class="icon">😋</span> Просто вкусно покушать)</h2>
+      <div class="item">
+        <div class="item-text"><strong>Макарошки с колбасками и сыром</strong></div>
+        <a href="https://www.instagram.com/reel/DdPAO0voFc0/?utm_source=ig_web_copy_link&stkn=MzRlODBiNWFlZA=="
+          class="recipe-link" target="_blank">Рецепт</a>
+      </div>
+      <div class="item">
+        <div class="item-text"><strong>Запеканка с курицей</strong></div>
+        <a href="https://www.instagram.com/reel/Dc1_NagCFqA/?utm_source=ig_web_copy_link&stkn=MzRlODBiNWFlZA=="
+          class="recipe-link" target="_blank">Рецепт</a>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2><span class="icon">🫙</span> Соусы</h2>
+
+      <div class="sauce-box">
+        <h3>🥒 ПП соус для шаурмы</h3>
+        <p><strong>Ингредиенты:</strong></p>
+        <ul>
+          <li>200 г йогурта лёгкого</li>
+          <li>укроп, кинза</li>
+          <li>1 свежий огурец</li>
+          <li>специи и соль по вкусу</li>
+          <li>1 зубчик чеснока</li>
+        </ul>
+        <p><strong>Способ приготовления:</strong></p>
+        <ol>
+          <li>Чеснок почистить и выдавить.</li>
+          <li>Огурец очистить от кожуры и порезать на небольшие кусочки.</li>
+          <li>Всё залить йогуртом, посолить и добавить приправы.</li>
+          <li>Взбить блендером и переложить в миску для соусов.</li>
+        </ol>
+      </div>
+
+      <div class="sauce-box">
+        <h3 class="alt">🍄 Грибной ПП соус</h3>
+        <p><strong>Ингредиенты:</strong></p>
+        <ul>
+          <li>Шампиньоны 200 гр.</li>
+          <li>Натуральный йогурт 300 гр.</li>
+          <li>Лук репчатый 2 шт.</li>
+          <li>Соль морская 2 гр.</li>
+          <li>Чёрный молотый перец 2 гр.</li>
+        </ul>
+        <p><strong>Способ приготовления:</strong></p>
+        <ol>
+          <li>Мелко нарезать репчатый лук и шампиньоны.</li>
+          <li>Выложить грибы и лук в сковороду, добавить 30 мл воды и готовить 15 минут под крышкой.</li>
+          <li>Добавить натуральный йогурт, специи. Тщательно перемешать.</li>
+          <li>Добавить кинзу и готовить ещё 7 минут.</li>
+          <li>Переложить в блендер и взбить до однородной массы.</li>
+        </ol>
+      </div>
+
+      <div class="sauce-box">
+        <h3 class="alt">🧀 ПП соус Цезарь</h3>
+        <p><strong>Ингредиенты:</strong></p>
+        <ul>
+          <li>Обезжиренная сметана 100 гр.</li>
+          <li>Горчица 1 ст. л.</li>
+          <li>Чеснок 1 шт.</li>
+          <li>Специи 1 ч.л.</li>
+        </ul>
+        <p><strong>Способ приготовления:</strong></p>
+        <ol>
+          <li>Добавить в миску со сметаной горчицу и перемешать.</li>
+          <li>Добавить специи и чеснок, натёртый на мелкой терке, и перемешать.</li>
+        </ol>
+      </div>
+
+    </div>
+
+  </div>
+  <footer>
+    Сделано с 🧡 | Приятного аппетита!
+  </footer>
+</body>
+
+</html>
